@@ -1,0 +1,197 @@
+/* ====== ESTILOS GERAIS ====== */
+body {
+    font-family: 'Amariya', serif;
+    margin: 0;
+    padding: 0;
+    background: #121212;
+    color: #e0e0e0;
+}
+
+header {
+  background-color: #1f1f1f;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* permite quebra em telas menores */
+}
+
+.logo {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f0f5f5;
+  letter-spacing: 1px;
+  user-select: none;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap; /* quebra itens em telas pequenas */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #3fb7b2;
+}
+
+/* ====== HERO E VÍDEO ====== */
+.video-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.hero {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #000f11, #000000);
+    position: relative;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* ====== SEÇÃO DE SERVIÇOS ====== */
+.services {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.services a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #cbd0d4;
+    color: #121212;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin: 0 auto;
+    max-width: 200px;
+    text-align: center;
+}
+
+.services a:hover {
+    background-color: #fdfeff;
+}
+
+/* ====== CARDS ====== */
+.card {
+    background-color: #1f1f1f;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+    border: 1px solid #3fb7b2;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #00ffea;
+}
+
+.sections a.card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* ====== RESPONSIVIDADE ====== */
+
+/* Smartphones pequenos (até 480px) */
+@media (max-width: 480px) {
+    .hero {
+        height: 50vh;
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .sections {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .services h2 {
+        font-size: 1.5rem;
+    }
+
+    .services p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablets e celulares grandes (481px a 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    .hero {
+        height: 50vh;
+        padding: 1rem;
+    }
+
+    .sections {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Telas médias (769px a 1024px) */
+@media (max-width: 1024px) {
+    .sections {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Telas grandes (acima de 1025px) */
+@media (min-width: 1025px) {
+    .sections {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}

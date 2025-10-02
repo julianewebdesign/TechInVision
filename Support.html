@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Technical Support - TechInVision</title>
+  <link rel="icon" href="../assets/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="../assets/css/test.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+
+            /* Aplicando a fonte apenas ao elemento com a classe 'logo' */
+        .logo {
+            font-family: 'Amariya', serif;
+            font-size: 24px; /* Ajuste o tamanho, se necessário */
+            color: #000; /* Cor do texto */
+        }
+        
+    * {
+      box-sizing: border-box;
+    }
+
+    
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #121212, #1c1c1c);
+      color: #e0e0e0;
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #222222;
+      padding: 1.25rem 3rem;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .logo {
+      font-family: 'Amariya', serif;
+      font-size: 1.75rem;
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 2px;
+      user-select: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    nav {
+      margin-left: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #cbd0d4;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.25s ease;
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 900px;
+      margin: 2.5rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+
+    main h1 {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      font-weight: 800;
+      color: #fff;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+
+    section.content p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      color: #cbd0d4;
+      line-height: 1.5;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .service {
+      background: #1f1f1f;
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 8px 24px rgba(0, 255, 255, 0.15),
+        inset 0 0 30px rgba(0, 255, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 255, 255, 0.4),
+        inset 0 0 40px rgba(0, 255, 255, 0.15);
+    }
+
+    .service h3 {
+      margin-top: 0;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #00ffff;
+      margin-bottom: 1rem;
+    }
+
+    .service ul {
+      padding-left: 1.25rem;
+      color: #cbd0d4;
+    }
+
+    .service ul li {
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .contact-btn-container {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .contact-btn {
+      background-color: #e9f0f0;
+      color: #121212;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+    }
+
+    .contact-btn:hover {
+      background-color: #33ffff;
+    }
+
+    footer {
+      background-color: #222222;
+      padding: 1.25rem 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      user-select: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="../index.html" class="logo">TechInVision</a>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Hardware.html">Hardware</a></li>
+        <li><a href="Software.html">Software</a></li>
+        <li><a href="websites.html">Web Development</a></li>
+        <li><a href="Support.html" class="active">Technical Support</a></li>
+        <li><a href="Cybersecurity.html">Cybersecurity</a></li>
+        <li><a href="services.html">Services</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Technical Support</h1>
+
+    <section class="content">
+      <p>At <strong>TechInVision</strong>, we provide personalized and efficient technical support to keep your systems running smoothly and securely. Whether you're facing hardware issues, network problems, or need help with system configuration, we’re here to assist you remotely.</p>
+      <p>Our areas of support include:</p>
+
+      <div class="services">
+        <div class="service">
+          <h3>Remote Troubleshooting</h3>
+          <ul>
+            <li><strong>Live Diagnostics:</strong> Real-time issue identification and resolution.</li>
+            <li><strong>System Analysis:</strong> In-depth checkups on your operating system and software.</li>
+            <li><strong>Error Fixes:</strong> Resolve boot errors, crashes, and freezing issues.</li>
+            <li><strong>User Support:</strong> Step-by-step help for common and advanced problems.</li>
+          </ul>
+        </div>
+
+        <div class="service">
+          <h3>Device Setup</h3>
+          <ul>
+            <li><strong>Initial Configuration:</strong> Setup of new desktops, laptops, or mobile devices.</li>
+            <li><strong>Network Integration:</strong> Connect your device securely to Wi-Fi and printers.</li>
+            <li><strong>App Installation:</strong> Installation and personalization of essential apps.</li>
+            <li><strong>User Training:</strong> Basic usage training for non-technical users.</li>
+          </ul>
+        </div>
+
+        <div class="service">
+          <h3>Maintenance & Optimization</h3>
+          <ul>
+            <li><strong>System Cleaning:</strong> Removal of temporary files and performance hogs.</li>
+            <li><strong>Performance Tuning:</strong> Optimize system startup and responsiveness.</li>
+            <li><strong>Update Management:</strong> Ensure drivers and systems are up to date.</li>
+            <li><strong>Backup Strategies:</strong> Set up local or cloud backups for data protection.</li>
+          </ul>
+        </div>
+
+        <div class="service">
+          <h3>Connectivity Support</h3>
+          <ul>
+            <li><strong>Wi-Fi Troubleshooting:</strong> Diagnose and fix connection drops or speed issues.</li>
+            <li><strong>Peripheral Setup:</strong> Connect printers, scanners, monitors, and other devices.</li>
+            <li><strong>Router Configuration:</strong> Secure and optimize your home or office network.</li>
+            <li><strong>VPN & Remote Access:</strong> Set up secure connections for remote work.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="contact-btn-container">
+        <a href="../Contact.html" class="contact-btn">Contact Us</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 TechInVision - All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

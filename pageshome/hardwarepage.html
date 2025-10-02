@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hardware - TechInVision</title>
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="stylesheet" href="../assets/css/test.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Amariya&display=swap" rel="stylesheet" />
+<style>
+
+    
+        .logo {
+            font-family: 'Amariya', serif;
+            font-size: 24px; 
+            color: #000; 
+        }
+        
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: linear-gradient(135deg, #121212, #1c1c1c);
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    background-color: #222222;
+    padding: 1.25rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  }
+
+  .logo {
+    font-family: 'Amariya', serif;
+    font-size: 1.75rem;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 2px;
+    user-select: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #00ffff;
+  }
+
+  main {
+    flex-grow: 1;
+    max-width: 900px;
+    margin: 2.5rem auto 4rem;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  main h1 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+
+  .article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    text-align: left;
+  }
+
+  article.article {
+    background: #1f1f1f;
+    border-radius: 8px;
+    padding: 2rem 2.5rem;
+    box-shadow:
+      0 8px 24px rgba(0, 255, 255, 0.15),
+      inset 0 0 30px rgba(0, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  article.article:hover {
+    transform: translateY(-10px);
+    box-shadow:
+      0 12px 30px rgba(0, 255, 255, 0.4),
+      inset 0 0 40px rgba(0, 255, 255, 0.15);
+  }
+
+  article.article h2 {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #f9fcfc;
+    margin-bottom: 1rem;
+  }
+
+  article.article p {
+    font-size: 1.1rem;
+    color: #cbd0d4;
+    margin-bottom: 1.5rem;
+  }
+
+  a.read-more {
+    font-weight: 700;
+    color: #00ffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.25s ease;
+  }
+
+  a.read-more:hover {
+    border-color: #00ffff;
+  }
+
+  footer {
+    background-color: #222222;
+    padding: 1.25rem 3rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    user-select: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="../index.html" class="logo">TechInVision</a>
+  <nav>
+    <ul>
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="../Blog.html">Blog</a></li>
+      <li><a href="./hardwarepage.html">Hardware</a></li>
+      <li><a href="./softwarehome.html">Software</a></li>
+    <li><a href="./programminghome.html">Programming</a></li>
+    <li><a href="./programminghome.html">Services</a></li>
+      <li><a href="./supporthome.html">Technical Support</a></li>
+      <li><a href="./cybersecurityhome.html">Cybersecurity</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <h1>Hardware</h1>
+
+  <section class="article-list">
+    <article class="article" onclick="location.href='article-build-gaming-pc-2025.html'">
+      <h2>How to Build Your Gaming PC in 2025</h2>
+      <p>A complete guide to choosing the right components and building your dream gaming computer for next-gen titles.</p>
+      <a href="article-build-gaming-pc-2025.html" class="read-more" tabindex="0">Read more →</a>
+    </article>
+
+    <article class="article" onclick="location.href='article-amd-ryzen-news.html'">
+      <h2>Latest in AMD Ryzen Processors</h2>
+      <p>Discover the newest technologies launched by AMD promising enhanced performance and energy efficiency.</p>
+      <a href="article-amd-ryzen-news.html" class="read-more" tabindex="0">Read more →</a>
+    </article>
+
+    <article class="article" onclick="location.href='article-basic-maintenance.html'">
+      <h2>Basic Maintenance: Cleaning and Hardware Care</h2>
+      <p>Important tips to keep your computer running well and avoid overheating and hardware failures.</p>
+      <a href="article-basic-maintenance.html" class="read-more" tabindex="0">Read more →</a>
+    </article>
+
+    <article class="article" onclick="location.href='article-ssd-vs-hdd.html'">
+      <h2>Understanding the Difference Between SSD and HDD</h2>
+      <p>Which storage option is best for your needs? See the pros and cons of each type of drive.</p>
+      <a href="article-ssd-vs-hdd.html" class="read-more" tabindex="0">Read more →</a>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 TechInVision - All rights reserved.</p>
+</footer>
+
+</body>
+</html>
