@@ -1,75 +1,220 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechInVision</title>
     <link rel="icon" href="../assets/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/test.css">
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amariya&display=swap" rel="stylesheet">
     <style>
-        /* Aplicando a fonte apenas ao elemento com a classe 'logo' */
-        .logo {
-            font-family: 'Amariya', serif;
-            font-size: 24px; /* Ajuste o tamanho, se necessário */
-            color: #000; /* Cor do texto */
-        }
-    </style>
-
-    <style>
-        body {
+        /* ====== RESET E ESTILOS GERAIS ====== */
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        body {
             font-family: 'Roboto', sans-serif;
             background-color: #121212;
             color: #e0e0e0;
+            overflow-x: hidden;
         }
+
+        /* ====== HEADER E NAVEGAÇÃO RESPONSIVA ====== */
         header {
             background-color: #1f1f1f;
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
         
         .logo {
+            font-family: 'Amariya', serif;
             font-size: 1.5rem;
             font-weight: bold;
             color: #ffffff;
+            z-index: 1001;
         }
-        nav ul {
+
+        /* Menu para desktop */
+        .desktop-nav ul {
             list-style: none;
             display: flex;
             gap: 1.5rem;
             margin: 0;
             padding: 0;
         }
-        nav ul li a {
+
+        .desktop-nav ul li a {
             text-decoration: none;
             color: #e0e0e0;
             transition: color 0.3s;
+            font-size: 0.9rem;
         }
-        nav ul li a:hover {
-            color: #000000;
+
+        .desktop-nav ul li a:hover {
+            color: #3fb7b2;
         }
+
+        /* Botão do menu mobile */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #e0e0e0;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Menu mobile */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(31, 31, 31, 0.98);
+            z-index: 1000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .mobile-nav ul li {
+            margin: 1.5rem 0;
+        }
+
+        .mobile-nav ul li a {
+            text-decoration: none;
+            color: #e0e0e0;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .mobile-nav ul li a:hover {
+            color: #3fb7b2;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            color: #e0e0e0;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ====== HERO E VÍDEO ====== */
         .hero {
             height: 70vh;
-            background: linear-gradient(135deg, #000f11, #000000);
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
+            background: linear-gradient(135deg, #000f11, #000000);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ====== SEÇÃO INTRO ====== */
+        .intro {
+            background-color: #181818;
+            padding: 3rem 2rem;
+            margin: 2rem auto;
+            max-width: 1000px;
+            border-radius: 12px;
+            border-left: 6px solid #99d9e0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            font-family: 'Roboto', sans-serif;
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        .intro h2 {
+            font-size: 2.4rem;
+            color: #f8fbfc;
+            margin-bottom: 1.5rem;
             text-align: center;
+            text-shadow: 1px 1px 4px #000;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 1rem 0 2rem;
+        }
+
+        .service-list li {
+            padding-left: 1.2rem;
+            position: relative;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-list li::before {
+            content: ".";
+            position: absolute;
+            left: 0;
+            color: #acabb1;
+            font-size: 2rem;
+            top: -0.8rem;
+        }
+
+        .cta-box {
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(90deg, #fafdfd, #feffff);
             color: #121212;
-            padding: 2rem;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,255,200,0.2);
         }
-        .hero h1 {
-            font-size: 2.5rem;
-        }
+
+        /* ====== SEÇÃO DE CARDS ====== */
         .sections {
             padding: 2rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .card {
@@ -78,24 +223,35 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
-            transition: transform 0.3s;
+            transition: transform 0.3s, border-color 0.3s;
+            border: 1px solid #3fb7b2;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
+
         .card:hover {
             transform: translateY(-10px);
+            border-color: #00ffea;
         }
+
+        /* ====== SEÇÃO DE SERVIÇOS ====== */
         .services {
             padding: 2rem;
             background-color: #1a1a1a;
             text-align: center;
         }
+
         .services h2 {
             font-size: 2rem;
             margin-bottom: 1rem;
         }
+
         .services p {
             font-size: 1rem;
             margin-bottom: 1.5rem;
         }
+
         .services a {
             display: inline-block;
             padding: 0.75rem 1.5rem;
@@ -107,32 +263,119 @@
             transition: background-color 0.3s;
         }
 
+        .services a:hover {
+            background-color: #fdfeff;
+        }
+
+        /* ====== FOOTER ====== */
         footer {
             background-color: #1f1f1f;
             padding: 1rem;
             text-align: center;
         }
+
+        /* ====== RESPONSIVIDADE ====== */
+
+        /* Tablets e telas menores */
+        @media (max-width: 1024px) {
+            .sections {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        /* Tablets pequenos e celulares grandes */
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .intro h2 {
+                font-size: 1.8rem;
+            }
+
+            .intro p {
+                font-size: 1rem;
+            }
+
+            .sections {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 1rem;
+            }
+        }
+
+        /* Celulares pequenos */
+        @media (max-width: 480px) {
+            header {
+                padding: 1rem;
+            }
+
+            .hero {
+                height: 50vh;
+            }
+
+            .intro {
+                padding: 2rem 1rem;
+                margin: 1rem;
+            }
+
+            .intro h2 {
+                font-size: 1.5rem;
+            }
+
+            .cta-box {
+                font-size: 1rem;
+            }
+
+            .services h2 {
+                font-size: 1.5rem;
+            }
+
+            .services p {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">TechInVision
-            <link href="https://fonts.googleapis.com/css2?family=Amariya&display=swap" rel="stylesheet">
-
-        </div>
-  <nav>
-    <ul>
-    <li><a href="./index.html">Home</a></li>
-      <li><a href="./Blog.html">Blog</a></li>
-      <li><a href="./pageshome/hardwarepage.html">Hardware</a></li>
-      <li><a href="./pageshome/softwarehome.html">Software</a></li>
-    <li><a href="./pageshome/programminghome.html">Programming</a></li>
-      <li><a href="./pageshome/supporthome.html">Technical Support</a></li>
-      <li><a href="./pageshome/cybersecurityhome.html">Cybersecurity</a></li>
-        <li><a href="./programminghome.html">Services</a></li>
-    </ul>
-  </nav>
-
+        <div class="logo">TechInVision</div>
+        
+        <!-- Menu para desktop -->
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./Blog.html">Blog</a></li>
+                <li><a href="./pageshome/hardwarepage.html">Hardware</a></li>
+                <li><a href="./pageshome/softwarehome.html">Software</a></li>
+                <li><a href="./pageshome/programminghome.html">Programação</a></li>
+                <li><a href="./pageshome/supporthome.html">Suporte Técnico</a></li>
+                <li><a href="./pageshome/cybersecurityhome.html">Cybersecurity</a></li>
+                <li><a href="./programminghome.html">Serviços</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Botão do menu mobile -->
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        
+        <!-- Menu mobile -->
+        <nav class="mobile-nav" id="mobileNav">
+            <button class="close-menu" id="closeMenu">✕</button>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./Blog.html">Blog</a></li>
+                <li><a href="./pageshome/hardwarepage.html">Hardware</a></li>
+                <li><a href="./pageshome/softwarehome.html">Software</a></li>
+                <li><a href="./pageshome/programminghome.html">Programação</a></li>
+                <li><a href="./pageshome/supporthome.html">Suporte Técnico</a></li>
+                <li><a href="./pageshome/cybersecurityhome.html">Cybersecurity</a></li>
+                <li><a href="./programminghome.html">Serviços</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="hero">
@@ -142,122 +385,53 @@
                 Seu navegador não suporta o elemento de vídeo.
             </video>
         </div>
-        <div class="text-overlay">
-            <h1></h1>
-            <p></p>
-        </div>
-    </section >
+    </section>
 
-<section class="intro">
-  <h2>Shaping the Future Through Technology</h2>
+    <section class="intro">
+        <h2>Shaping the Future Through Technology</h2>
 
-  <p>Welcome to <strong>TechInVision</strong> — where innovation, efficiency, and security come together to elevate your digital presence.</p>
+        <p>Welcome to <strong>TechInVision</strong> — where innovation, efficiency, and security come together to elevate your digital presence.</p>
 
-  <p>We live in a time of a <strong>technological revolution</strong>. Every second brings new tools, languages, and platforms that reshape how we connect, create, and work. To stay ahead, it’s not just about keeping up — it’s about leading change.</p>
+        <p>We live in a time of a <strong>technological revolution</strong>. Every second brings new tools, languages, and platforms that reshape how we connect, create, and work. To stay ahead, it's not just about keeping up — it's about leading change.</p>
 
-  <p><strong>At TechInVision, we provide complete solutions in:</strong></p>
+        <p><strong>At TechInVision, we provide complete solutions in:</strong></p>
 
-  <ul class="service-list">
-    <li><strong>Hardware</strong>: Setup, upgrades, and maintenance with guaranteed performance.</li>
-    <li><strong>Software</strong>: Custom development, automation, and optimization services.</li>
-    <li><strong>Programming</strong>: Tailored systems, smart scripts, and scalable architectures.</li>
-    <li><strong>Web Development</strong>: Fast, responsive websites focused on user experience.</li>
-    <li><strong>Technical Support</strong>: Expert assistance, whenever you need it.</li>
-    <li><strong>Cybersecurity</strong>: Advanced protection against digital threats and data breaches.</li>
-  </ul>
+        <ul class="service-list">
+            <li><strong>Hardware</strong>: Setup, upgrades, and maintenance with guaranteed performance.</li>
+            <li><strong>Software</strong>: Custom development, automation, and optimization services.</li>
+            <li><strong>Programming</strong>: Tailored systems, smart scripts, and scalable architectures.</li>
+            <li><strong>Web Development</strong>: Fast, responsive websites focused on user experience.</li>
+            <li><strong>Technical Support</strong>: Expert assistance, whenever you need it.</li>
+            <li><strong>Cybersecurity</strong>: Advanced protection against digital threats and data breaches.</li>
+        </ul>
 
-  <p>Whether you're a tech enthusiast, a startup, or an established business, <strong>TechInVision</strong> is your ideal partner to turn ideas into real, scalable solutions.</p>
+        <p>Whether you're a tech enthusiast, a startup, or an established business, <strong>TechInVision</strong> is your ideal partner to turn ideas into real, scalable solutions.</p>
 
-  <p class="cta-box"> <strong>Connect with the future of technology. Grow with TechInVision.</strong></p>
+        <p class="cta-box"> <strong>Connect with the future of technology. Grow with TechInVision.</strong></p>
+    </section>
 
-  <style>
-    .intro {
-        background-color: #181818;
-        padding: 3rem 2rem;
-        margin: 2rem auto;
-        max-width: 1000px;
-        border-radius: 12px;
-        border-left: 6px solid #99d9e0;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        font-family: 'Roboto', sans-serif;
-        color: #e0e0e0;
-        line-height: 1.8;
-    }
-
-    .intro h2 {
-        font-size: 2.4rem;
-        color: #f8fbfc;
-        margin-bottom: 1.5rem;
-        text-align: center;
-        text-shadow: 1px 1px 4px #000;
-    }
-
-    .intro p {
-        font-size: 1.1rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .highlight {
-        color: #99d9e0;
-        font-weight: bold;
-    }
-
-    .service-list {
-        list-style-type: none;
-        padding-left: 0;
-        margin: 1rem 0 2rem;
-    }
-
-    .service-list li {
-        padding-left: 1.2rem;
-        position: relative;
-        margin-bottom: 0.8rem;
-    }
-
-    .service-list li::before {
-        content: ".";
-        position: absolute;
-        left: 0;
-        color: #acabb1;
-    }
-
-    .cta-box {
-        font-size: 1.2rem;
-        text-align: center;
-        padding: 1rem;
-        background: linear-gradient(90deg, #fafdfd, #feffff);
-        color: #121212;
-        font-weight: bold;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,255,200,0.2);
-    }
-  </style>
-</section>
-
-
-    
-<section class="sections">
-    <a href="Hardware.html" class="card">
-        <h2>Hardware</h2>
-        <p>Complete hardware solutions — from installation to maintenance, we've got you covered</p>
-    </a>
-    <a href="Software.html" class="card">
-        <h2>Software</h2>
-        <p>Custom software services tailored to your needs — development, updates, and support</p>
-    </a>
-    <a href="websites.html" class="card">
-        <h2>Web Development</h2>
-        <p>Professional website design and management — your digital presence made easy</p>
-    </a>
-    <a href="Support.html" class="card">
-        <h2>Technical Support</h2>
-        <p>Reliable technical support — quick solutions to keep your systems running smoothly.</p>
-    </a>
-    <a href="Cybersecurity.html" class="card">
-        <h2>Cybersecurity</h2>
-        <p>Comprehensive cybersecurity services — protecting your digital assets 24/7</p>
-    </a>
-</section>
+    <section class="sections">
+        <a href="Hardware.html" class="card">
+            <h2>Hardware</h2>
+            <p>Complete hardware solutions — from installation to maintenance, we've got you covered</p>
+        </a>
+        <a href="Software.html" class="card">
+            <h2>Software</h2>
+            <p>Custom software services tailored to your needs — development, updates, and support</p>
+        </a>
+        <a href="websites.html" class="card">
+            <h2>Web Development</h2>
+            <p>Professional website design and management — your digital presence made easy</p>
+        </a>
+        <a href="Support.html" class="card">
+            <h2>Technical Support</h2>
+            <p>Reliable technical support — quick solutions to keep your systems running smoothly.</p>
+        </a>
+        <a href="Cybersecurity.html" class="card">
+            <h2>Cybersecurity</h2>
+            <p>Comprehensive cybersecurity services — protecting your digital assets 24/7</p>
+        </a>
+    </section>
 
     <section class="services" id="services">
         <h2>Technological Services</h2>
@@ -268,5 +442,28 @@
     <footer>
         <p>&copy; 2025 TechInVision</p>
     </footer>
+
+    <script>
+        // Menu mobile toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        const closeMenu = document.getElementById('closeMenu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+        });
+
+        // Fechar menu ao clicar em um link
+        const mobileLinks = mobileNav.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
